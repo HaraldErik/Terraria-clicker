@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terraria Clicker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <img id="clickButton" src="King_Slime.gif" alt="Click for Coins!" style="cursor: pointer; width: 150px; height: auto;"> <!-- Changed to an image -->
+        </div>
+        <div class="center">
+            <h2>Stats</h2>
+            <div id="statsDisplay">Coins per Click: 1 | Coins per Second: 0 | Copper Swords Owned: 0 | Light's Bane Owned: 0</div>
+        </div>
+        <div class="right">
+            <h2>Shop</h2>
+            <div id="coinCounter">You have 0 coins</div> <!-- Coin counter added here -->
+            <div class="tabs">
+                <button class="tab" onclick="showTab('weapons')">Weapons</button>
+                <button class="tab" onclick="showTab('npcs')">NPCs</button>
+                <button class="tab" onclick="showTab('summons')">Summons</button>
+            </div>
+            <div id="shopContent">
+                <div id="weapons" class="tabContent">
+                    <h3>Weapons</h3>
+                    <div>
+                        <button id="buySword" disabled>Buy Copper Sword (Cost: 10 Coins)</button>
+                        <div id="swordInfo">+1 Coin per Click</div>
+                    </div>
+                    <div>
+                        <button id="buyLightsBane" disabled>Buy Light's Bane (Cost: 750 Coins)</button>
+                        <div id="lightsBaneInfo">+10 Coins per Click</div>
+                    </div>
+                </div>
+                <div id="npcs" class="tabContent" style="display:none;">
+                    <h3>NPCs</h3>
+                    <button id="buyNPC" disabled>Hire NPC (Cost: 50 Coins)</button>
+                    <div id="npcInfo">+1 Coin per Second</div>
+                </div>
+                <div id="summons" class="tabContent" style="display:none;">
+                    <h3>Summons</h3>
+                    <p>This tab is currently empty.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+<div id="saveControls">
+    <button onclick="saveGame()">Save Game</button>
+    <button onclick="localStorage.clear(); location.reload();">Reset Game</button>
+</div>
